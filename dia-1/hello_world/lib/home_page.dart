@@ -23,8 +23,39 @@ class HomePageState extends State<HomePage> {
           CustomSwitch(),
         ],
       ),
-      body: Center(
-        child: CustomSwitch(),
+      body: SizedBox(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Contador: $counter'),
+            Container(height: 10),
+            CustomSwitch(),
+            Container(height: 50),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.amber,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.amber,
+                ),
+                Container(
+                  width: 50,
+                  height: 50,
+                  color: Colors.amber,
+                ),
+              ],
+            ),
+          ]
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
