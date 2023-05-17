@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_world/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -20,7 +21,9 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
               TextField(
                 onChanged: (text) {
                   email = text;
@@ -47,9 +50,10 @@ class _LoginPageState extends State<LoginPage> {
                   onPressed: () {
                     if (email == 'rafaelbrandao1992@gmail.com' &&
                         password == '123456789') {
-                      print('Correto');
-                    } else {
-                      print('Login invalido');
+                      // Navigator.of(context).pushReplacement(
+                      //   MaterialPageRoute(builder: (context) => HomePage())
+                      // );
+                      Navigator.of(context).pushReplacementNamed('/home');
                     }
                   },
                   child: const Text('Entrar')),
