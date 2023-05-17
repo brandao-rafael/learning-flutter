@@ -21,42 +21,51 @@ class _LoginPageState extends State<LoginPage> {
           height: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: const InputDecoration(
-                  labelText: "Email",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              Container(height: 10),
-              TextField(
-                onChanged: (text) {
-                  password = text;
-                },
-                obscureText: true,
-                decoration: const InputDecoration(
-                  labelText: "Password",
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              Container(height: 10),
-              ElevatedButton(
-                  onPressed: () {
-                    if (email == 'rafaelbrandao1992@gmail.com' &&
-                        password == '123456789') {
-                      // Navigator.of(context).pushReplacement(
-                      //   MaterialPageRoute(builder: (context) => HomePage())
-                      // );
-                      Navigator.of(context).pushReplacementNamed('/home');
-                    }
-                  },
-                  child: const Text('Entrar')),
+            child:
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center, 
+                children: [
+                  Container(height: 84),
+                  Container(
+                    height: 50,
+                    margin: const EdgeInsets.all(28.0),
+                    child: Image.network(
+                        'https://e7.pngegg.com/pngimages/977/153/png-clipart-dominique-chicken-salted-duck-egg-quail-incubator-real-small-sprouting-chicken-animals-chicken-thumbnail.png'),
+                  ),
+                  TextField(
+                    onChanged: (text) {
+                      email = text;
+                    },
+                    keyboardType: TextInputType.emailAddress,
+                    decoration: const InputDecoration(
+                      labelText: "Email",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  Container(height: 10),
+                  TextField(
+                    onChanged: (text) {
+                      password = text;
+                    },
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                      labelText: "Password",
+                      border: OutlineInputBorder(),
+                    ),
+                  ),
+                  Container(height: 10),
+                  ElevatedButton(
+                      onPressed: () {
+                        if (email == 'rafaelbrandao1992@gmail.com' &&
+                            password == '123456789') {
+                          // Navigator.of(context).pushReplacement(
+                          //   MaterialPageRoute(builder: (context) => HomePage())
+                          // );
+                          Navigator.of(context).pushReplacementNamed('/home');
+                        }
+                      },
+                      child: const Text('Entrar')),
             ]),
           ),
         ),
