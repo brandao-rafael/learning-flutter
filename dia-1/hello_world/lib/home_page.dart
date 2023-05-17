@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:hello_world/app_controller.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -15,23 +16,20 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: Text('Home Page')
+        title: const Text('Home Page')
       ),
       body: Center(
-          child: GestureDetector(
-            child: Text("Counter: $counter", 
-            style: TextStyle(fontSize: 20),),
-            onTap: () {
-              setState((){
-                counter += 1;
-              });
-          }),
-        ),
+        child: Switch(
+          value: AppController.instance.isDarkTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
+        }),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
           setState(() => counter += 1)
         },
-        child: Icon(Icons.add)
+        child: const Icon(Icons.add)
       ,),
     );
   }
