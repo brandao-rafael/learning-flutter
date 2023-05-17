@@ -1,5 +1,7 @@
 
 
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:hello_world/app_controller.dart';
 
@@ -16,14 +18,13 @@ class HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page')
+        title: const Text('Home Page'),
+        actions: [
+          CustomSwitch(),
+        ],
       ),
       body: Center(
-        child: Switch(
-          value: AppController.instance.isDarkTheme,
-          onChanged: (value) {
-            AppController.instance.changeTheme();
-        }),
+        child: CustomSwitch(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => {
@@ -32,5 +33,18 @@ class HomePageState extends State<HomePage> {
         child: const Icon(Icons.add)
       ,),
     );
+  }
+}
+
+class CustomSwitch extends StatelessWidget {
+  const CustomSwitch({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+          value: AppController.instance.isDarkTheme,
+          onChanged: (value) {
+            AppController.instance.changeTheme();
+        });
   }
 }
