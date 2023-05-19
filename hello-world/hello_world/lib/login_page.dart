@@ -30,8 +30,9 @@ class _LoginPageState extends State<LoginPage> {
                   Container(
                     height: 50,
                     margin: const EdgeInsets.all(28.0),
-                    child: Image.network(
-                        'https://e7.pngegg.com/pngimages/977/153/png-clipart-dominique-chicken-salted-duck-egg-quail-incubator-real-small-sprouting-chicken-animals-chicken-thumbnail.png'),
+                    child: Image.asset(
+                        'assets/images/logo.png'
+                    ),
                   ),
                   TextField(
                     onChanged: (text) {
