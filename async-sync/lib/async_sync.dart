@@ -9,11 +9,15 @@ Future main() async {
 }
 
 Future<Todo> fetch () async {
-  var url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1');
-  var response = await http.get(url);
-  var json = jsonDecode(response.body);
-  var todo = Todo.fromJson(json);
-  return todo;
+  try {
+    var url = Uri.parse('https://jsonplaceholder.typicode.com/todos/1');
+    var response = await http.get(url);
+    var json = jsonDecode(response.body);
+    var todo = Todo.fromJson(json);
+    return todo;
+  } catch (e) {
+    throw Exception('failed to fetch todo: $e');
+  }
 }
 
 class Todo {
