@@ -13,7 +13,6 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> {
   final TextEditingController toText = TextEditingController();
-
   final TextEditingController fromText = TextEditingController();
 
   late HomeController homeController;
